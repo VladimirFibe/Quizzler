@@ -8,26 +8,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-  let question: UILabel = {
+  
+
+  var quizBrain = QuizBrain()
+  let questionLabel: UILabel = {
     let label = UILabel()
     label.font = UIFont.boldSystemFont(ofSize: 30)
     label.text = "Question text"
+    label.numberOfLines = 0
     return label
   }()
   let trueButton: AnswerButton = {
     let button = AnswerButton(type: .system)
     button.setTitle("True", for: .normal)
     button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+    button.addTarget(self, action: #selector(answerButtonPressed), for: .touchUpInside)
     return button
   }()
   let falseButton: AnswerButton = {
     let button = AnswerButton(type: .system)
     button.setTitle("False", for: .normal)
     button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+    button.addTarget(self, action: #selector(answerButtonPressed), for: .touchUpInside)
     return button
   }()
   
-  let progress: UIProgressView = {
+  let progressBar: UIProgressView = {
     let progress = UIProgressView()
     progress.progressViewStyle = .bar
     progress.progress = 0.5
@@ -37,24 +43,25 @@ class ViewController: UIViewController {
     progress.heightAnchor.constraint(equalToConstant: 10).isActive = true
     return progress
   }()
-  let bubbles: UIImageView = {
+  let bubblesView: UIImageView = {
     let image = UIImageView(image: #imageLiteral(resourceName: "Background-Bubbles"))
     return image
   }()
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = #colorLiteral(red: 0.1450980392, green: 0.1725490196, blue: 0.2901960784, alpha: 1)
-    view.addSubview(bubbles)
-    bubbles.translatesAutoresizingMaskIntoConstraints = false
-    bubbles.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-    bubbles.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    bubbles.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    view.addSubview(bubblesView)
+    bubblesView.translatesAutoresizingMaskIntoConstraints = false
+    bubblesView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    bubblesView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    bubblesView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     
-    view.addSubview(question)
+    view.addSubview(questionLabel)
     view.addSubview(trueButton)
     view.addSubview(falseButton)
-    view.addSubview(progress)
-    let stack = UIStackView(arrangedSubviews: [question, trueButton, falseButton, progress])
+    view.addSubview(progressBar)
+    
+    let stack = UIStackView(arrangedSubviews: [questionLabel, trueButton, falseButton, progressBar])
     view.addSubview(stack)
     stack.axis = .vertical
     stack.alignment = .fill
@@ -65,9 +72,22 @@ class ViewController: UIViewController {
     stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
     stack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
     stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+    updateUI()
   }
-
-
+  
+  @objc func answerButtonPressed(_ sender: UIButton) {
+    let userAnswer = sender.currentTitle
+    sender.backgroundColor = quizBrain.checkAnswer(userAnswer) ? .green : .red
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+      sender.backgroundColor = .clear
+      self.quizBrain.nextQuestion()
+      self.updateUI()
+    }
+  }
+  func updateUI() {
+    questionLabel.text = quizBrain.currentQuestion
+    progressBar.progress = quizBrain.progress
+  }
 }
 
 class AnswerButton: UIButton {
@@ -83,3 +103,5 @@ class AnswerButton: UIButton {
     fatalError("init(coder:) has not been implemented")
   }
 }
+
+

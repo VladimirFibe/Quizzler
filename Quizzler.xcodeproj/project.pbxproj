@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4B250027A3F905008A1A56 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B24FF27A3F905008A1A56 /* QuizBrain.swift */; };
 		1FE6E58B27A3B90D00228F31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6E58A27A3B90D00228F31 /* AppDelegate.swift */; };
 		1FE6E58D27A3B90D00228F31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6E58C27A3B90D00228F31 /* SceneDelegate.swift */; };
 		1FE6E58F27A3B90D00228F31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6E58E27A3B90D00228F31 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F4B24FF27A3F905008A1A56 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		1FE6E58727A3B90D00228F31 /* Quizzler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizzler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE6E58A27A3B90D00228F31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FE6E58C27A3B90D00228F31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F4B250127A3F916008A1A56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F4B24FF27A3F905008A1A56 /* QuizBrain.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1FE6E57E27A3B90D00228F31 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +69,7 @@
 				1FE6E58A27A3B90D00228F31 /* AppDelegate.swift */,
 				1FE6E58C27A3B90D00228F31 /* SceneDelegate.swift */,
 				1FE6E58E27A3B90D00228F31 /* ViewController.swift */,
+				1F4B250127A3F916008A1A56 /* Model */,
 				1FE6E59027A3B90D00228F31 /* Main.storyboard */,
 				1FE6E59327A3B90F00228F31 /* Assets.xcassets */,
 				1FE6E59527A3B90F00228F31 /* LaunchScreen.storyboard */,
@@ -141,6 +152,7 @@
 				1FE6E58F27A3B90D00228F31 /* ViewController.swift in Sources */,
 				1FE6E58B27A3B90D00228F31 /* AppDelegate.swift in Sources */,
 				1FE6E58D27A3B90D00228F31 /* SceneDelegate.swift in Sources */,
+				1F4B250027A3F905008A1A56 /* QuizBrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
