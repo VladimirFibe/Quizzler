@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Quizzler
-//
-//  Created by Vladimir Fibe on 28.01.2022.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
