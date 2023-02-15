@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024D97E0299C8A23004B3475 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 024D97DF299C8A23004B3475 /* 1.png */; };
 		02CF2D402991378A00BC9771 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 02CF2D3E2991378A00BC9771 /* questions.json */; };
 		02CF2D412991378A00BC9771 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF2D3F2991378A00BC9771 /* Question.swift */; };
 		02CF2D71299138B000BC9771 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF2D6D299138B000BC9771 /* BaseView.swift */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		024D97DD299C8A08004B3475 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		024D97DF299C8A23004B3475 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		02CF2D3E2991378A00BC9771 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		02CF2D3F2991378A00BC9771 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		02CF2D6D299138B000BC9771 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -57,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		024D97DE299C8A0A004B3475 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				024D97DF299C8A23004B3475 /* 1.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 		02CF2D7B29913D0200BC9771 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +130,8 @@
 		1FE6E57E27A3B90D00228F31 = {
 			isa = PBXGroup;
 			children = (
+				024D97DD299C8A08004B3475 /* README.md */,
+				024D97DE299C8A0A004B3475 /* img */,
 				1FE6E58927A3B90D00228F31 /* Quizzler */,
 				1FE6E58827A3B90D00228F31 /* Products */,
 			);
@@ -207,6 +220,7 @@
 				02CF2D402991378A00BC9771 /* questions.json in Resources */,
 				1FE6E59427A3B90F00228F31 /* Assets.xcassets in Resources */,
 				1FE6E59227A3B90D00228F31 /* Main.storyboard in Resources */,
+				024D97E0299C8A23004B3475 /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
